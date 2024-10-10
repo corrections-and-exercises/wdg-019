@@ -15,7 +15,7 @@ export function createCard(data) {
 
     const productImage = document.createElement('img');
     productImage.src = data.image;
-    productImage.classList.add('h-2/3', 'w-full', 'object-over');
+    productImage.classList.add('h-2/3', 'w-full', 'object-cover');
 
     const productTitle = document.createElement('p');
     productTitle.textContent = data.title;
