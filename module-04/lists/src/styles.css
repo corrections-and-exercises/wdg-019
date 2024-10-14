@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.students {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.student-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px;
+}
+
+.student-picture {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.student-card h2 {
+    margin: 15px 0;
+}
+
+.student-card p {
+    margin: 10px 15px;
+    color: #333;
+}
+
+.student-card p strong {
+    color: #007bff;
+}

@@ -1,0 +1,18 @@
+.card {
+    background-color: lightcoral;
+    width: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+
+    & img {
+        background-color: lawngreen;
+        border: 10px solid brown;
+        border-radius: 50px;
+    }
+    & ul {
+        list-style-type: none;
+        width: 50%;
+    }
+}
