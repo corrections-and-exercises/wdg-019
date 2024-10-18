@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 1rem;
+    gap: 0.5em;
+    text-align: right;
+
+    & button {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    & input {
+        margin: 0.2em;
+    }
+
+    & label {
+        margin-right: 1em;
+    }
+}

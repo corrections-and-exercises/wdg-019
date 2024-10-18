@@ -1,0 +1,37 @@
+body {
+    background-color: bisque;
+}
+
+.counter_container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 5rem;
+    /* background-color: lightblue; */
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    & button {
+        border: none;
+        padding: 1em;
+        background-color: lightsalmon;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: orange;
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: red;
+        }
+    }
+
+    & p {
+        color: red;
+        text-align: center;
+        font-size: 30px;
+    }
+}
