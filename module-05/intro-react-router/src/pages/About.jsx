@@ -1,3 +1,12 @@
+import { useOutletContext } from 'react-router-dom';
 export default function About() {
-    return <div>About</div>;
+  const { counter, setCounter } = useOutletContext();
+  return (
+    <div>
+      <p>{counter}</p>
+      <button onClick={() => setCounter((prev) => prev + 1)}>
+        increase counter
+      </button>
+    </div>
+  );
 }

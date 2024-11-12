@@ -1,0 +1,14 @@
+[
+    {
+        "text": "lorem ipsum",
+        "author": "karl karlsen",
+        "id": 1,
+        "description": "more lorem ipsum tralalal"
+    },
+    {
+        "text": "lorem ipsum 2",
+        "author": "johanna johannsen",
+        "id": 2,
+        "description": "more lorem ipsum tralalal2"
+    }
+]
