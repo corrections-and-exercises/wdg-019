@@ -1,5 +1,6 @@
 import express from 'express';
 import './db/index.js';
+import './models/index.js';
 import {
     createNote,
     deleteNote,

@@ -15,20 +15,3 @@ export const User = sequelize.define('User', {
         allowNull: false,
     },
 });
-
-export const Note = sequelize.define('Note', {
-    title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    content: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-});
-
-User.hasMany(Note);
-Note.belongsTo(User);
-
-await User.sync();
-await Note.sync();
