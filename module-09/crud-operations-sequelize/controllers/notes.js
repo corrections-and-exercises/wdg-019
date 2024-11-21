@@ -4,7 +4,9 @@ import {User} from '../models/User.js';
 export const getNotes = async (req, res) => {
     try {
         // include - to populate user data
-        const notes = await Note.findAll({include: {model: User}});
+        const notes = await Note.findAll({
+            include: {model: User, attributes: ['firstName']},
+        });
         res.json(notes);
     } catch (error) {
         res.status(500).json({error: error.message});
