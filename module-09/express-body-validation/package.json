@@ -1,13 +1,11 @@
 {
-    "name": "express-intro",
+    "name": "express-body-validation",
     "version": "1.0.0",
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "node -r dotenv/config --watch index.js",
-        "start": "node index.js",
-        "init": "node -r dotenv/config scripts/initDb.js"
+        "start": "node index.js"
     },
     "keywords": [],
     "author": "",
@@ -15,7 +13,9 @@
     "description": "",
     "dependencies": {
         "express": "^5.0.1",
-        "pg": "^8.13.1"
+        "joi": "^17.13.3",
+        "pg": "^8.12.0",
+        "sequelize": "^6.37.3"
     },
     "devDependencies": {
         "dotenv": "^16.4.5"

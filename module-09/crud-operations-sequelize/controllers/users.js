@@ -30,12 +30,7 @@ export const createUser = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     try {
-        const {
-            params: {id},
-        } = req;
-        const user = await User.findByPk(id);
-        if (!user) return res.status(404).json({error: 'User not found'});
-        res.json(user);
+        res.json(req.user);
     } catch (error) {
         res.status(500).json({error: error.message});
     }
@@ -45,7 +40,6 @@ export const updateUser = async (req, res) => {
     try {
         const {
             body: {firstName, lastName, email},
-            params: {id},
         } = req;
         if (!firstName || !lastName || !email) {
             return res
@@ -53,22 +47,17 @@ export const updateUser = async (req, res) => {
                 .json({error: 'firstName, lastName and email are required'});
         }
 
-        const user = await User.findByPk(id);
-        user.update(req.body);
-        await user.save();
-        res.json(user);
+        req.user.update(req.body);
+        await req.user.save();
+        res.json(req.user);
     } catch (error) {
         res.status(500).json({error: error.message});
     }
 };
 
 export const deleteUser = async (req, res) => {
-    const {
-        params: {id},
-    } = req;
     try {
-        const user = await User.findByPk(id);
-        await user.destroy();
+        await req.user.destroy();
         res.json({message: 'User deleted'});
     } catch (error) {
         res.status(500).json({error: error.message});

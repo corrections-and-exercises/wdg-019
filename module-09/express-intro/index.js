@@ -31,23 +31,22 @@ app.post('/posts', async (req, res) => {
     const {title} = req.body;
     console.log('title', title);
 
-    try {
-        const {rows} = await pool.query(
-            `INSERT INTO posts (title) VALUES ($1) RETURNING *;`,
-            [title]
-        );
-        console.log(rows);
-        res.json(rows);
-    } catch (error) {
-        console.log(error);
-        res.sendStatus(500);
-    }
+    // try {
+    const {rows} = await pool.query(
+        `INSERT INTO post (title) VALUES ($1) RETURNING *;`,
+        [title]
+    );
+    console.log(rows);
+    res.json(rows);
+    // } catch (error) {
+    //     console.log(error);
+    //     res.sendStatus(500);
+    // }
 
     // res.status(201).json({message: 'New Post created'});
 });
 
 app.get('/posts/:id', (req, res) => {
-    console.log(typeof req.params.id);
     const post = posts.find((post) => post.id === parseInt(req.params.id));
 
     if (!post) {

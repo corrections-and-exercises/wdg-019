@@ -1,12 +1,13 @@
 import {User} from './User.js';
 import {Note} from './Note.js';
 
-User.hasMany(Note);
-Note.belongsTo(User, {
-    foreignKey: {
-        name: 'tralala',
-    },
+User.hasMany(Note, {
+    foreignKey: 'myUserId',
 });
 
-await User.sync();
-await Note.sync();
+Note.belongsTo(User, {
+    foreignKey: 'myUserId',
+});
+
+await User.sync({force: true});
+await Note.sync({force: true});
